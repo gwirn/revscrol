@@ -15,7 +15,7 @@ git clone https://github.com/gwirn/revscrol.git
 cd revscrol
 swiftc -o revscrol main.swift -framework Cocoa -framework Quartz
 ```
-Change the mouse names you use in `revscrol.sh` in the `mice`array as well as the `revscrolPath` to where you have saved revscrol.
+Change the mouse names you use in `revscrol.sh` in the `mice` array as well as the `revscrolPath` to where you have saved revscrol.
 
 If you use USB mice instead of Bluetooth change the system_profiler to `SPUSBDataType`.
 
