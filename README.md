@@ -26,7 +26,7 @@ You can use a cronjob that starts at reboot like so:
 
 For this to work you need to grant the revscrol binary permissions in `System Settings > Privacy and Security > Accessibility`.
 
-!!! Be aware - that only checks for a mouse connection for the first 5 minutes after you login - not if you add a mouse later !!!
+**!!! Be aware - that only checks for a mouse connection for the first 5 minutes after you login - not if you add a mouse later !!!**
 
 To "continuously" check for connected mice add a cronjob like `6 * * * * /bin/bash PATH/TO/revscrol.sh` which checks every minute whether a new mouse is connected.
 
