@@ -1,13 +1,13 @@
 # revscrol
 
-This small "app" reverses the scrolling direction of your mouse without any GUI changes or even changes to the scroll direction settings itself.
+This small app reverses the scrolling direction of your mouse without any GUI interactions or changes to the scroll direction settings.
 
-### Why another one of these apps?
-This should be a minimal app, without the need of a GUI or any other interaction by the user. It should just reverse the scrolling direction if a mouse is connected since one can not set the direction for mouse and trackpad independent from each other on mac.
+### Why is there a need for another one of these apps?
+It should be a minimal app that doesn't require a GUI or any other user interaction. It should simply reverse the scrolling direction when a mouse is connected, since it is not possible to set the direction for the mouse and trackpad independently of each other on a Mac.
 
 ## Installation
 
-## Compiling
+### Compiling
 
 Create a binary called `revscrol` with the following command:
 ```sh
@@ -17,9 +17,9 @@ swiftc -o revscrol main.swift -framework Cocoa -framework Quartz
 ```
 Change the mouse names you use in `revscrol.sh` in the `mice` array as well as the `revscrolPath` to where you have saved revscrol.
 
-If you use USB mice instead of Bluetooth change the system_profiler to `SPUSBDataType`.
+If you use USB mice instead of Bluetooth change (or extend)$the system_profiler to `SPUSBDataType`.
 
-## Start
+### Start
 You can use a cronjob that starts at reboot like so:
 
 `crontab -e` and add `@reboot /bin/bash /PATH/TO/revscrol.sh`
@@ -32,7 +32,7 @@ To "continuously" check for connected mice add a cronjob like `6 * * * * /bin/ba
 
 The `revscrol.sh` script will generate a `revscrol.pid` file where the PID of the revscrol process is stored and a `revscrol.log` file where any information about revscrols execution is stored.
 
-## Stop
+### Stop
 To stop the execution of revscrol run the following command:
 ```sh
 kill $(cat /PATH/TO/revscrol.pid)
