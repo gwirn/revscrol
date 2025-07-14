@@ -21,6 +21,9 @@ while [[ $(date -u +%s) -le $endtime ]];do
 done
 
 if [ "$externalMouseDetected" -eq 1 ];then
+    if ! pgrep revscrol > /dev/null; then
+        kill $(cat "$revscrolPath/revscrol.pid")
+    fi
     exit 0
 fi
 if [ "$(defaults read -g com.apple.swipescrolldirection)" -eq 1 ]; then
