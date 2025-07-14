@@ -11,7 +11,7 @@ This should be a minimal app, without the need of a GUI or any other interaction
 
 Create a binary called `revscrol` with the following command:
 ```sh
-git clone
+git clone https://github.com/gwirn/revscrol.git
 cd revscrol
 swiftc -o revscrol main.swift -framework Cocoa -framework Quartz
 ```
@@ -22,7 +22,7 @@ If you use USB mice instead of Bluetooth change the system_profiler to `SPUSBDat
 ## Start
 You can use a cronjob that starts at reboot like so:
 
-`crontab -e` and add `@reboot /bin/bash PATH/TO/revscrol.sh`
+`crontab -e` and add `@reboot /bin/bash /PATH/TO/revscrol.sh`
 
 For this to work you need to grant the revscrol binary permissions in `System Settings > Privacy and Security > Accessibility`.
 
