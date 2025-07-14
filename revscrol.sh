@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep 10
 mice=('MX Anywhere 2S' 'MX Master 3S')
 revscrolPath="$HOME/Code/revscrol"
 runtime="5M"
@@ -23,7 +23,9 @@ done
 if [ "$externalMouseDetected" -eq 1 ];then
     exit 0
 fi
-if [ "$(defaults read -g com.apple.swipescrolldirection)" -eq 1 ];then
-    "$revscrolPath/revscrol" > "$revscrolPath/revscrol.log"&
-    echo "$!" > "$revscrolPath/revscrol.pid"
+if [ "$(defaults read -g com.apple.swipescrolldirection)" -eq 1 ]; then
+    if ! pgrep revscrol > /dev/null; then
+        "$revscrolPath/revscrol" &> "$revscrolPath/revscrol.log" &
+        echo "$!" > "$revscrolPath/revscrol.pid"
+    fi
 fi
