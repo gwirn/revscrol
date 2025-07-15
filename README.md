@@ -2,8 +2,11 @@
 
 This small app reverses the scrolling direction of your mouse without any GUI interactions or changes to the scroll direction settings.
 
+### Motivation
+On a Mac - if you want to use "natural scrolling" when using your trackpad but do not want to use it when you use your mouse, you will need to go to the System Settings and turn it on or of depending on what you use because you can not set these settings independently for mouse and trackpad or vice versa.
+
 ### Why is there a need for another one of these apps?
-It should be a minimal app that doesn't require a GUI or any other user interaction. It should simply reverse the scrolling direction when a mouse is connected, since it is not possible to set the direction for the mouse and trackpad independently of each other on a Mac.
+It should be a minimal app that doesn't require a GUI or any other user interaction. It should simply reverse the scrolling direction when a mouse is connected. It should not rely on an apple script to open the System Settings GUI for you and click through all since that often breaks from one OS version to the next.
 
 ## Installation
 
@@ -15,7 +18,7 @@ git clone https://github.com/gwirn/revscrol.git
 cd revscrol
 swiftc -o revscrol main.swift -framework Cocoa -framework Quartz
 ```
-Change the mouse names you use in `revscrol.sh` in the `mice` array as well as the `revscrolPath` to where you have saved revscrol.
+Change the mouse names you use in `revscrol.sh` in the `mice` array as well as the `revscrolPath` to where you have saved revscrol. These are hard-coded on purpose so the script needs no arguments and is easier to run based on the method you use to start `revscrol.sh` .
 
 If you use USB mice instead of Bluetooth change (or extend)$the system_profiler to `SPUSBDataType`.
 

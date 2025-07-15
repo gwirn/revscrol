@@ -1,11 +1,10 @@
 #!/bin/bash
-sleep 10
+# sleep 10
 mice=('MX Anywhere 2S' 'MX Master 3S')
 revscrolPath="$HOME/Code/revscrol"
 runtime="5M"
 
 externalMouseDetected=1
-
 endtime=$(date -u -v "+$runtime" +%s)
 while [[ $(date -u +%s) -le $endtime ]];do
     for m in "${mice[@]}";do
@@ -21,14 +20,13 @@ while [[ $(date -u +%s) -le $endtime ]];do
 done
 
 if [ "$externalMouseDetected" -eq 1 ];then
-    if ! pgrep revscrol > /dev/null; then
-        kill $(cat "$revscrolPath/revscrol.pid")
+    if pgrep revscrol > /dev/null; then
+        kill "$(cat "$revscrolPath/revscrol.pid")"
     fi
     exit 0
 fi
-if [ "$(defaults read -g com.apple.swipescrolldirection)" -eq 1 ]; then
-    if ! pgrep revscrol > /dev/null; then
-        "$revscrolPath/revscrol" &> "$revscrolPath/revscrol.log" &
-        echo "$!" > "$revscrolPath/revscrol.pid"
-    fi
+whoami
+if ! pgrep revscrol > /dev/null; then
+    "$revscrolPath/revscrol" &> "$revscrolPath/revscrol.log" &
+    echo $! > "$revscrolPath/revscrol.pid"
 fi
