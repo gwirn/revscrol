@@ -25,7 +25,6 @@ if [ "$externalMouseDetected" -eq 1 ];then
     fi
     exit 0
 fi
-whoami
 if ! pgrep revscrol > /dev/null; then
     "$revscrolPath/revscrol" &> "$revscrolPath/revscrol.log" &
     echo $! > "$revscrolPath/revscrol.pid"
