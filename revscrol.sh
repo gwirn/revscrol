@@ -1,5 +1,5 @@
 #!/bin/bash
-# sleep 10
+sleep 10
 mice=('MX Anywhere 2S' 'MX Master 3S')
 revscrolPath="$HOME/Code/revscrol"
 runtime="5M"
