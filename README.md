@@ -20,7 +20,8 @@ swiftc -o revscrol main.swift -framework Cocoa -framework Quartz
 ```
 Change the mouse names you use in `revscrol.sh` in the `mice` array as well as the `revscrolPath` to where you have saved revscrol. These are hard-coded on purpose so the script needs no arguments and is easier to run based on the method you use to start `revscrol.sh` .
 
-If you use USB mice instead of Bluetooth change (or extend)$the system_profiler to `SPUSBDataType`.
+If you use USB mice instead of Bluetooth change (or extend) the [system_profiler](
+https://github.com/gwirn/revscrol/blob/1539f499993c14a9bd6af53f3c3eab70543bbd58/revscrol.sh#L11) to `SPUSBDataType`.
 
 ### Start
 You can use a cronjob that starts at reboot like so:
